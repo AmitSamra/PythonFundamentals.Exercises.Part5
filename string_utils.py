@@ -53,4 +53,3 @@ def opposite_case(str_in: str) -> str:
             elif i.islower():
                 a += i.upper()
         return a
-    opposite_case("HeLlO")
