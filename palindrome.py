@@ -5,5 +5,10 @@ def is_palindrome(value: str) -> bool:
     :param value: A string
     :return: A boolean
     """
-    return value[::1] == value[::-1]
-    
+    a = ''
+    for i in value:
+        a += i.lower()
+    b = a.split()
+    c = ''.join(b)
+    return c == c[::-1]
+
