@@ -36,7 +36,7 @@ def substring(str_in: str, start: int, stop: int) -> str:
     start -- starting position of the input parameter to start the substring (inclusive)
     stop -- stopping position of the input parameter to stop the substring (exclusive)
     """
-    return str_in[start:stop+1]
+    return str_in[start:stop]
 
 
 def opposite_case(str_in: str) -> str:
@@ -45,11 +45,10 @@ def opposite_case(str_in: str) -> str:
     Example: 
     When input = "Python" the function returns "pYTHON"
     """
-    def opposite_case(str_in):
-        a = ''
-        for i in str_in:
-            if i.isupper():
-                a += i.lower()
-            elif i.islower():
-                a += i.upper()
-        return a
+    a = ''
+    for i in str_in:
+        if i.isupper():
+            a += i.lower()
+        elif i.islower():
+            a += i.upper()
+    return a
