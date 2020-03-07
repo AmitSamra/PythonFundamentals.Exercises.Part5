@@ -1,5 +1,6 @@
 from typing import List
-from math import ceil
+#from math import ceil
+import math
 
 
 def get_item_at_position(list_in: List, pos: int) -> List:
@@ -33,11 +34,6 @@ def sort_by_commit_count(list_in: List) -> List:
     """
     return sorted(list_in, key = lambda x: x[1])
 
-'''
-a = sort_by_commit_count([['Alex',4], ['Cathy', 10], ['Barry',3]])
-print(a)
-'''
-
 
 def gen_list_of_nums(n: int) -> List[int]:
     """
@@ -46,12 +42,8 @@ def gen_list_of_nums(n: int) -> List[int]:
     :param n: The number of items the result should contain
     :return: A list of integers
     """
-    return list(range(0,n+1))
-
-'''
-a = gen_list_of_nums(5)
-print(a)
-'''
+    a = list(range(0,n))
+    return a
 
 
 def half_list(list_in: List, half: int) -> List:
@@ -70,18 +62,7 @@ def half_list(list_in: List, half: int) -> List:
     elif len(list_in) % 2 != 0 and half == 1:
         return list_in[ 0 : math.ceil(int(len(list_in)/2))+1 ]
     elif len(list_in) % 2 != 0 and half == 2:
-        return list_in[ math.ceil(int(len(list_in)/2))+1 : ]
-
-'''
-a = half_list([1,2,3,4],1)
-print(a)
-b = half_list([1,2,3,4],2)
-print(b)
-c = half_list([1,2,3,4,5],1)
-print(c)
-d = half_list([1,2,3,4,5],2)
-print(d)
-'''
+        return list_in[ math.floor(len(list_in)/2) : ]
 
 
 def remove_odds(list_in: List[int]) -> None:
@@ -93,12 +74,7 @@ def remove_odds(list_in: List[int]) -> None:
     for i in list_in:
         if i % 2 != 0:
             list_in.pop(list_in.index(i))
-    return list_in
-
-'''
-a = remove_odds([1,2,3,4,5])
-print(a)
-'''
+   
 
 
 def remove_evens(list_in: List[int]) -> None:
@@ -110,7 +86,7 @@ def remove_evens(list_in: List[int]) -> None:
     for i in list_in:
         if i % 2 == 0:
             list_in.pop(list_in.index(i))
-    return list_in
+    
 
 
 def concatenate_lists(list_a: List, list_b: List) -> List:
@@ -133,12 +109,8 @@ def multiply_list(list_in: List, scalar: int) -> List:
     :param scalar: An integer
     :return: A list
     """
-    a = []
+    '''a = []
     for i in list_in:
         a.append(i*scalar)
-    return a
-
-'''
-b = [1,2,3,4,5]
-print(multiply_list(b,2))
-'''
+    return a'''
+    return list_in*scalar
